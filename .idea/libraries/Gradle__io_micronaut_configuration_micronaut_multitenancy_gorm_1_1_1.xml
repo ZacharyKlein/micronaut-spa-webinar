@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.micronaut.configuration:micronaut-multitenancy-gorm:1.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.configuration/micronaut-multitenancy-gorm/1.1.1/b2c61406441796d38ac240f1b6a33a943002725e/micronaut-multitenancy-gorm-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.configuration/micronaut-multitenancy-gorm/1.1.1/2d11269f91fe763c5dce16072733e2dafa67f8ad/micronaut-multitenancy-gorm-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

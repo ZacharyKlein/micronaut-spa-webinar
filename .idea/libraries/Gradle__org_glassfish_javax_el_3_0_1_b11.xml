@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.glassfish:javax.el:3.0.1-b11">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.el/3.0.1-b11/cca8438407af01056d83830ba7392efc18544347/javax.el-3.0.1-b11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.el/3.0.1-b11/af405735b6f4bfff5e345dabd1f8a0b00811d4d7/javax.el-3.0.1-b11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

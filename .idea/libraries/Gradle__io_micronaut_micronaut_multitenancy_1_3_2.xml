@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.micronaut:micronaut-multitenancy:1.3.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-multitenancy/1.3.2/9f5a8fc291da58fb06d7937da30393a34a1576a3/micronaut-multitenancy-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut/micronaut-multitenancy/1.3.2/ac19f811c5fe9e9199d28774787d243333c4092b/micronaut-multitenancy-1.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

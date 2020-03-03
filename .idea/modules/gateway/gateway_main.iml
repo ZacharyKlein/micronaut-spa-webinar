@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":gateway:main" external.linked.project.path="$MODULE_DIR$/../../../gateway" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.objectcomputing" external.system.module.type="sourceSet" external.system.module.version="0.1" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../gateway/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../gateway/build/generated/sources/annotationProcessor/java/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../gateway/build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../gateway/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../gateway/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../gateway/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-security-jwt:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-discovery-client:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-http-client:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-management:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-multitenancy:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-http-server-netty:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-runtime:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-validation:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-inject:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-security:1.3.1" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-http-server:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-http:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.nimbusds:nimbus-jose-jwt:8.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.26" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-http-netty:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-websocket:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler-proxy:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.reactivex.rxjava2:rxjava:2.2.10" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-router:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-core:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-aop:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: javax.validation:validation-api:2.0.1.Final" level="project" />
+    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.24" level="project" />
+    <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.stephenc.jcip:jcip-annotations:1.0-1" level="project" />
+    <orderEntry type="library" name="Gradle: net.minidev:json-smart:2.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.micronaut:micronaut-buffer-netty:1.3.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-socks:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.10.1" level="project" />
+    <orderEntry type="library" name="Gradle: net.minidev:accessors-smart:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.45.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.0.4" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: ch.qos.logback:logback-core:1.2.3" level="project" />
+  </component>
+</module>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.micronaut.test:micronaut-test-spock:1.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.test/micronaut-test-spock/1.1.2/1c8f034290539111bf319e3e5b632e0a97d6e8de/micronaut-test-spock-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.micronaut.test/micronaut-test-spock/1.1.2/ad00bee92f73492bb7bace8d1ccd615e5d2bab03/micronaut-test-spock-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
