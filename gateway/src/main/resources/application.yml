@@ -33,7 +33,7 @@ micronaut:
       enabled: true
       service-id-regex: 'inventory'
     tenantresolver:
-      subdomain:
+      httpheader:
         enabled: true
     tenantwriter:
       httpheader:
