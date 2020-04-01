@@ -6,6 +6,14 @@ The project is a Gradle multi-project build, with subprojects for `inventory` ("
 
 ## Usage
 
+The `inventory`, `auth` and `gateway` services expect Consul to be running at `localhost:8500`. This can be most easily accomplished using Docker:
+
+```
+docker run -d -p8500:8500 consul
+```
+
+Once Consul is running, the services can be started up using Gradle (order is suggested, not required, but all three services should be running prior to making requests against the Gateway).
+
 Start the `inventory` service:
 
 ```
@@ -27,7 +35,7 @@ Start the `gateway` service:
 Start the `frontend` with either Gradle or NPM/Yarn:
 
 ```
-./gradlew frontend:run
+./gradlew frontend:serve
 ```
 ...or
 ```
