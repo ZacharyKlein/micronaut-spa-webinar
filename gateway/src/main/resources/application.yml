@@ -9,7 +9,7 @@ micronaut:
 ---
 micronaut:
   security:
-    enabled: false
+    enabled: true
     intercept-url-map:
       - pattern: /swagger-ui/*
         http-method: GET
