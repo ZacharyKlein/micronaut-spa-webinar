@@ -39,7 +39,7 @@ Start the `frontend` with either Gradle or NPM/Yarn:
 ```
 ...or
 ```
-cd frontend; npm install; npm start
+cd frontend; npm install; npm run serve
 ```
 
 The Gateway will run at `http://localhost:8080`
