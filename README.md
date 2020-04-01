@@ -43,3 +43,7 @@ Users (usernames case sensititve):
 `ACME`/`password`
 `Makers`/`password`
 `Admin`/`password`
+
+## API Documentation
+
+The API documentation for the Gateway can be found at `http://localhost:8080/swagger-ui/`
