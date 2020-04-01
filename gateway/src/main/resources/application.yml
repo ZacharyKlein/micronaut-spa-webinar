@@ -11,6 +11,10 @@ micronaut:
   security:
     enabled: true
     intercept-url-map:
+      - pattern: /swagger/*
+        http-method: GET
+        access:
+          - isAnonymous()
       - pattern: /swagger-ui/*
         http-method: GET
         access:
