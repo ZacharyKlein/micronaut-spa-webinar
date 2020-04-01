@@ -1,10 +1,10 @@
-#Micronaut / Single Page App Demo
+# Micronaut / Single Page App Demo
 
 This project demonstrates use of a Single Page App (written in Vue.js) with a microservices backend (using Micronaut).
 
 The project is a Gradle multi-project build, with subprojects for `inventory` ("business logic"), `auth` (user authentication), `gateway` (API gateway for the SPA), and `frontend` (Vue.js SPA).
 
-#Usage
+## Usage
 
 Start the `inventory` service:
 
