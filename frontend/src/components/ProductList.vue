@@ -1,5 +1,8 @@
 <template>
     <div class="content">
+
+        <h1>Inventory <span v-if="tenant">for {{tenant}}</span></h1>
+
         <loading :active.sync="isLoading" :is-full-page="false"></loading>
 
         <form>
@@ -35,36 +38,49 @@
         name: "ProductList",
         data() {
             return {
-                tenant: null,
+                tenant: this.username,
                 products: [],
                 isLoading: false,
             }
         },
+        props: ["username"],
         components: {
             Loading
         },
-        watch: {
-            tenant(val) {
-                this.products = [];
+        created() {
+            if(this.tenant) {
+                this.loadProducts();
+            }
+        },
+        methods: {
+            loadProducts() {
                 this.isLoading = true;
 
                 fetch("http://localhost:8080/products/", {
                     method: "GET",
                     headers: {
                         Accept: "application/json",
-                        'tenantId': val,
+                        'tenantId': this.tenant,
                         Authorization: `Bearer ${localStorage.getItem("access_token")}`
                     }
                 }).then(response => response.json())
-                .then(json => {
+                    .then(json => {
 
-                    setTimeout(() => {
-                        this.products = json;
+                        setTimeout(() => {
+                            this.products = json;
+                            this.isLoading = false;
+                        }, 1000);
+
+                    })
+                    .catch(error => {
+                        console.warn(error);
                         this.isLoading = false;
-                    }, 1000);
-
-                })
-                .catch(error => console.warn(error));
+                    });
+            }
+        },
+        watch: {
+            tenant() {
+                this.loadProducts();
             }
         }
 

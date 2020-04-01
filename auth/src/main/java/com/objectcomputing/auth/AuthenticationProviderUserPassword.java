@@ -1,4 +1,4 @@
-package com.objectcomputing;
+package com.objectcomputing.auth;
 
 import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
@@ -16,7 +16,7 @@ public class AuthenticationProviderUserPassword implements AuthenticationProvide
 
     @Override
     public Publisher<AuthenticationResponse> authenticate(AuthenticationRequest authenticationRequest) {
-        if ((authenticationRequest.getIdentity().equals("sherlock") || authenticationRequest.getIdentity().equals("watson")) &&
+        if ((authenticationRequest.getIdentity().equals("ACME") || authenticationRequest.getIdentity().equals("Makers")) &&
                 authenticationRequest.getSecret().equals("password")) {
             return Flowable.just(new UserDetails((String) authenticationRequest.getIdentity(), Collections.emptyList()));
         }

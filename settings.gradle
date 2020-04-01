@@ -1,3 +1,5 @@
+include "auth"
 include "gateway"
 include "inventory"
+include "inventory-api"
 include "frontend"

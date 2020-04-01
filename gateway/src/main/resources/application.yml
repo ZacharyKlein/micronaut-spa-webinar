@@ -12,7 +12,7 @@ micronaut:
     enabled: true
     endpoints:
       login:
-        enabled: true
+        enabled: false #Use proxy login controller
       oauth:
         enabled: true
     token:

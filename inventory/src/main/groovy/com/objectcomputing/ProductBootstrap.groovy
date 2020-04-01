@@ -20,9 +20,9 @@ class ProductBootstrap {
 
         ["ACME", "Makers"].each {tenant ->
             withId(tenant) {
-                productService.save(new Product(name: "Widget A"))
-                productService.save(new Product(name: "Widget B"))
-                productService.save(new Product(name: "Widget C"))
+                productService.save(new Product(name: "${tenant} Widget A"))
+                productService.save(new Product(name: "${tenant} Widget B"))
+                productService.save(new Product(name: "${tenant} Widget C"))
             }
         }
 

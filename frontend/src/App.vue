@@ -4,10 +4,11 @@
       <span><label>Username:</label> {{username}}</span>
       <span><label>Token Type:</label> {{tokenType}}</span>
       <span><label>Expiration:</label> {{expirationTime}} ms</span>
+      <span><a href="#" @click="loggedIn = false">[Logout]</a></span>
     </div>
-    <img alt="Micronaut logo" src="./assets/logo.png" style="max-width: 240px;">
+    <img alt="Micronaut logo" src="./assets/logo.png" style="max-width: 480px;">
     <LoginForm @login="login" v-if="!loggedIn"/>
-    <ProductList v-else />
+    <ProductList v-else :username="username" />
 
   </div>
 </template>

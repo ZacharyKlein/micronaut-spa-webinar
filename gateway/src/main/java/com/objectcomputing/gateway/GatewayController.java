@@ -1,5 +1,7 @@
-package com.objectcomputing;
+package com.objectcomputing.gateway;
 
+import com.objectcomputing.clients.ProductClient;
+import com.objectcomputing.ProductDetails;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.security.annotation.Secured;
@@ -21,9 +23,9 @@ public class GatewayController {
         return productClient.list();
     }
 
-    @Get("/products/{id}")
-    ProductDetails getProduct(Long id) {
-        return productClient.show(id);
+    @Get("/products/{identifier}")
+    ProductDetails getProduct(Long identifier) {
+        return productClient.show(identifier);
     }
 
 }

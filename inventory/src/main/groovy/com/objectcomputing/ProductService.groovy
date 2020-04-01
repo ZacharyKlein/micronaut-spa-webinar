@@ -4,7 +4,7 @@ import grails.gorm.multitenancy.CurrentTenant
 import grails.gorm.services.Service
 
 @CurrentTenant
-@Service(Service)
+@Service(Product)
 interface ProductService {
 
     Product findById(Serializable id)
