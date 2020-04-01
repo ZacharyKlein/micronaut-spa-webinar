@@ -3,13 +3,12 @@ package com.objectcomputing
 import groovy.util.logging.Slf4j
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
-import io.micronaut.http.annotation.Header
 import io.micronaut.security.annotation.Secured
 
 @Slf4j
 @Secured("isAuthenticated()")
 @Controller("/product")
-class ProductController /* implements ProductApi */ {
+class ProductController implements ProductApi {
 
     final ProductService productService
 
@@ -23,8 +22,7 @@ class ProductController /* implements ProductApi */ {
     }
 
     @Get("/")
-    List<ProductDetails> list(@Header tenantId) {
-        log.info("tenantId: ${tenantId}")
+    List<ProductDetails> list() {
         return productService.list().collect { it as ProductDetails }
     }
 

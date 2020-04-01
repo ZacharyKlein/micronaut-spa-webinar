@@ -9,7 +9,12 @@ micronaut:
 ---
 micronaut:
   security:
-    enabled: true
+    enabled: false
+    intercept-url-map:
+      - pattern: /swagger-ui/*
+        http-method: GET
+        access:
+          - isAnonymous()
     endpoints:
       login:
         enabled: false #Use proxy login controller
@@ -45,3 +50,18 @@ consul:
       enabled: true
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
 ---
+micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      redoc:
+        paths: classpath:META-INF/swagger/views/redoc
+        mapping: /redoc/**
+      rapidoc:
+        paths: classpath:META-INF/swagger/views/rapidoc
+        mapping: /rapidoc/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
