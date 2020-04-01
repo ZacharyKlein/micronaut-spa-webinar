@@ -1,5 +1,7 @@
 <template>
-    <div>
+    <div class="content">
+        <loading :active.sync="isLoading" :is-full-page="false"></loading>
+
         <form>
             <label for="tenant">Select Tenant:</label>
             <select id="tenant" v-model="tenant">
@@ -26,17 +28,25 @@
     </div>
 </template>
 <script>
+    import Loading from 'vue-loading-overlay';
+    import 'vue-loading-overlay/dist/vue-loading.css';
+
     export default {
         name: "ProductList",
         data() {
             return {
                 tenant: null,
-                products: []
+                products: [],
+                isLoading: false,
             }
+        },
+        components: {
+            Loading
         },
         watch: {
             tenant(val) {
                 this.products = [];
+                this.isLoading = true;
 
                 fetch("http://localhost:8080/products/", {
                     method: "GET",
@@ -46,10 +56,23 @@
                         Authorization: `Bearer ${localStorage.getItem("access_token")}`
                     }
                 }).then(response => response.json())
-                .then(json => this.products = json)
+                .then(json => {
+
+                    setTimeout(() => {
+                        this.products = json;
+                        this.isLoading = false;
+                    }, 1000);
+
+                })
                 .catch(error => console.warn(error));
             }
         }
 
     }
 </script>
+<style>
+    .content {
+        margin: 0 auto;
+        width: 800px;
+    }
+</style>
