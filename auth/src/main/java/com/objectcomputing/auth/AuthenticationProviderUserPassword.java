@@ -1,10 +1,6 @@
 package com.objectcomputing.auth;
 
-import io.micronaut.security.authentication.AuthenticationFailed;
-import io.micronaut.security.authentication.AuthenticationProvider;
-import io.micronaut.security.authentication.AuthenticationRequest;
-import io.micronaut.security.authentication.AuthenticationResponse;
-import io.micronaut.security.authentication.UserDetails;
+import io.micronaut.security.authentication.*;
 import io.reactivex.Flowable;
 import org.reactivestreams.Publisher;
 
@@ -16,7 +12,9 @@ public class AuthenticationProviderUserPassword implements AuthenticationProvide
 
     @Override
     public Publisher<AuthenticationResponse> authenticate(AuthenticationRequest authenticationRequest) {
-        if ((authenticationRequest.getIdentity().equals("ACME") || authenticationRequest.getIdentity().equals("Makers")) &&
+        if ((authenticationRequest.getIdentity().equals("ACME")
+                || authenticationRequest.getIdentity().equals("Makers")
+                || authenticationRequest.getIdentity().equals("Admin")) &&
                 authenticationRequest.getSecret().equals("password")) {
             return Flowable.just(new UserDetails((String) authenticationRequest.getIdentity(), Collections.emptyList()));
         }

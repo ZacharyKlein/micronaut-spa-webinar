@@ -1,11 +1,12 @@
 <template>
     <div class="content">
 
-        <h1>Inventory <span v-if="tenant">for {{tenant}}</span></h1>
+        <h1 v-if="isAdmin">Administrative Dashboard</h1>
+        <h1 v-else>Inventory <span v-if="tenant">for {{tenant}}</span></h1>
 
         <loading :active.sync="isLoading" :is-full-page="false"></loading>
 
-        <form>
+        <form v-if="isAdmin">
             <label for="tenant">Select Tenant:</label>
             <select id="tenant" v-model="tenant">
                 <option value="">Select...</option>
@@ -81,6 +82,11 @@
         watch: {
             tenant() {
                 this.loadProducts();
+            }
+        },
+        computed: {
+            isAdmin() {
+                return (this.username === 'Admin');
             }
         }
 

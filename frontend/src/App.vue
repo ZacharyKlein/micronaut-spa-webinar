@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="user-info" v-if="loggedIn">
+    <div :class="userInfoClass" v-if="loggedIn">
       <span><label>Username:</label> {{username}}</span>
       <span><label>Token Type:</label> {{tokenType}}</span>
       <span><label>Expiration:</label> {{expirationTime}} ms</span>
@@ -44,6 +44,14 @@ export default {
         this.loggedIn = true;
       }
     }
+  },
+  computed: {
+    userInfoClass() {
+      return {
+        'user-info': true,
+        'admin-info': this.username === 'Admin'
+      }
+    }
   }
 }
 </script>
@@ -62,6 +70,10 @@ export default {
   padding-top: 6px;
   background-color: aquamarine;
   font-size: smaller;
+}
+
+.admin-info {
+  background-color: lightcoral!important;
 }
 
 .user-info span {
