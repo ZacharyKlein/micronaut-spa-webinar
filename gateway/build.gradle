@@ -36,7 +36,7 @@ dependencies {
     implementation "io.micronaut:micronaut-discovery-client"
     implementation "io.swagger.core.v3:swagger-annotations"
 
-    compile project(":inventory-api")
+    implementation project(":inventory-api")
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     testAnnotationProcessor platform("io.micronaut:micronaut-bom:$micronautVersion")

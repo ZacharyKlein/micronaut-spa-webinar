@@ -35,7 +35,7 @@ dependencies {
     implementation "io.micronaut.configuration:micronaut-multitenancy-gorm"
     implementation "io.micronaut:micronaut-discovery-client"
 
-    compile project(":inventory-api")
+    implementation project(":inventory-api")
 
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     runtimeOnly "com.h2database:h2"
