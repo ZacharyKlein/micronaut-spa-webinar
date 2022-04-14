@@ -11,7 +11,6 @@ group "com.objectcomputing"
 
 repositories {
     mavenCentral()
-    maven { url "https://jcenter.bintray.com" }
 }
 
 configurations {
@@ -40,7 +39,6 @@ dependencies {
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     runtimeOnly "com.h2database:h2"
     runtimeOnly "org.apache.tomcat:tomcat-jdbc"
-    testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testCompileOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     testImplementation("org.spockframework:spock-core") {
