@@ -4,9 +4,10 @@ import groovy.util.logging.Slf4j
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.security.annotation.Secured
+import io.micronaut.security.rules.SecurityRule
 
 @Slf4j
-@Secured("isAuthenticated()")
+@Secured(SecurityRule.IS_AUTHENTICATED)
 @Controller("/product")
 class ProductController implements ProductApi {
 

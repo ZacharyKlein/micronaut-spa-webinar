@@ -1,72 +1,55 @@
 plugins {
-    id "groovy"
-    id "com.github.johnrengelman.shadow" version "5.2.0"
-    id "application"
+    id("groovy")
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.3.2"
 }
 
-
-
-version "0.1"
-group "com.objectcomputing"
+version = "0.1"
+group = "com.objectcomputing"
 
 repositories {
     mavenCentral()
 }
 
-configurations {
-    // for dependencies that are needed for development only
-    developmentOnly 
-}
-
 dependencies {
-    compileOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
-    compileOnly "io.micronaut:micronaut-inject-groovy"
-    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
-    implementation "io.micronaut:micronaut-runtime-groovy"
-    implementation "io.micronaut:micronaut-validation"
-    implementation "io.micronaut:micronaut-security-jwt"
-    implementation "io.micronaut:micronaut-http-client"
-    implementation "io.micronaut.configuration:micronaut-hibernate-validator"
-    implementation "io.micronaut.configuration:micronaut-hibernate-gorm"
-    implementation "io.micronaut:micronaut-http-server-netty"
-    implementation "io.micronaut:micronaut-management"
-    implementation "io.micronaut:micronaut-multitenancy"
-    implementation "io.micronaut.configuration:micronaut-multitenancy-gorm"
-    implementation "io.micronaut:micronaut-discovery-client"
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-jackson-databind")
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+    implementation("io.micronaut.discovery:micronaut-discovery-client")
+    implementation("io.micronaut.groovy:micronaut-hibernate-gorm")
+    implementation("io.micronaut.groovy:micronaut-multitenancy-gorm")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
+    implementation("io.micronaut.multitenancy:micronaut-multitenancy")
+    implementation("io.micronaut.security:micronaut-security-jwt")
+    implementation("io.swagger.core.v3:swagger-annotations")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    compileOnly("io.micronaut:micronaut-http-validation")
+    compileOnly("io.micronaut.openapi:micronaut-openapi")
+    compileOnly("io.micronaut.security:micronaut-security-annotations")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("com.h2database:h2")
+    runtimeOnly("org.apache.tomcat:tomcat-jdbc")
+    implementation("io.micronaut:micronaut-validation")
 
     implementation project(":inventory-api")
 
-    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
-    runtimeOnly "com.h2database:h2"
-    runtimeOnly "org.apache.tomcat:tomcat-jdbc"
-    testCompileOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
-    testImplementation platform("io.micronaut:micronaut-bom:$micronautVersion")
-    testImplementation("org.spockframework:spock-core") {
-        exclude group: "org.codehaus.groovy", module: "groovy-all"
+}
+
+
+application {
+    mainClass.set("com.objectcomputing.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("spock2")
+    processing {
+        incremental(true)
+        annotations("com.objectcomputing.*")
     }
-    testImplementation "io.micronaut:micronaut-inject-groovy"
-    testImplementation "io.micronaut.test:micronaut-test-spock"
-    testImplementation "io.micronaut.test:micronaut-test-junit5"
-    testImplementation "org.junit.jupiter:junit-jupiter-api"
-    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
-}
-
-test.classpath += configurations.developmentOnly
-
-mainClassName = "com.objectcomputing.Application"
-// use JUnit 5 platform
-test {
-    useJUnitPlatform()
-}
-tasks.withType(GroovyCompile) {
-    groovyOptions.forkOptions.jvmArgs.add('-Dgroovy.parameters=true')
-}
-
-shadowJar {
-    mergeServiceFiles()
-}
-
-tasks.withType(JavaExec) {
-    classpath += configurations.developmentOnly
-    jvmArgs('-noverify', '-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote')
 }

@@ -1,5 +1,6 @@
-profile: service
+applicationType: default
 defaultPackage: com.objectcomputing
----
 testFramework: spock
 sourceLanguage: groovy
+buildTool: gradle
+features: [annotation-api, app-name, consul, discovery-consul, gradle, groovy, groovy-application, h2, hibernate-gorm, hibernate-validator, http-client, jackson-databind, logback, micronaut-build, multi-tenancy, multi-tenancy-gorm, netty-server, openapi, readme, security-annotations, security-jwt, shade, spock, swagger-ui, yaml]

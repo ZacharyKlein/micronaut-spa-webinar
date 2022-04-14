@@ -3,10 +3,16 @@ micronaut:
     name: auth
   server:
     port: -1
----
-micronaut:
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
   security:
-    enabled: true
+    authentication: bearer
     endpoints:
       login:
         enabled: true
@@ -14,11 +20,10 @@ micronaut:
         enabled: true
     token:
       jwt:
-        enabled: true
         signatures:
           secret:
             generator:
-              secret: "${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"
+              secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
       writer:
         header:
           enabled: true
@@ -30,5 +35,8 @@ consul:
   client:
     registration:
       enabled: true
-    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
----
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+netty:
+  default:
+    allocator:
+      max-order: 3

@@ -1,6 +1,6 @@
 package com.objectcomputing.auth;
 
-import com.objectcomputing.auth.AuthClient;
+import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.MediaType;
@@ -11,7 +11,7 @@ import io.micronaut.http.annotation.Post;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.rules.SecurityRule;
-import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
+import io.micronaut.security.token.jwt.render.AccessRefreshToken;
 
 import javax.validation.Valid;
 
@@ -27,9 +27,9 @@ class LoginController {
 
     @Consumes({MediaType.APPLICATION_FORM_URLENCODED, MediaType.APPLICATION_JSON})
     @Post("/")
-    HttpResponse<BearerAccessRefreshToken> login(@Valid @Body UsernamePasswordCredentials credentials) {
+    HttpResponse<AccessRefreshToken> login(@Valid @Body UsernamePasswordCredentials credentials, HttpRequest<?> request) {
 
-        HttpResponse<BearerAccessRefreshToken> response = authClient.login(credentials);
+        HttpResponse<AccessRefreshToken> response = authClient.login(credentials, request);
 
         if (response.getStatus().equals(HttpStatus.OK)) {
             return HttpResponse.ok(response.body());

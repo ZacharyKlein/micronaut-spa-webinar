@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <div :class="userInfoClass" v-if="loggedIn">
-      <span><label>Username:</label> {{username}}</span>
-      <span><label>Token Type:</label> {{tokenType}}</span>
-      <span><label>Expiration:</label> {{expirationTime}} ms</span>
+      <span><label>Username:</label> {{ username }}</span>
+      <span><label>Token Type:</label> {{ tokenType }}</span>
+      <span><label>Expiration:</label> {{ expirationTime }} ms</span>
       <span><a href="#" @click="loggedIn = false">[Logout]</a></span>
     </div>
     <img alt="Micronaut logo" src="./assets/logo.png" style="max-width: 480px;">
     <LoginForm @login="login" v-if="!loggedIn"/>
-    <ProductList v-else :username="username" />
+    <ProductList v-else :username="username"/>
 
   </div>
 </template>
@@ -33,16 +33,32 @@ export default {
   },
   methods: {
     login(response) {
+      console.log({response});
+
       if (response.access_token) {
         localStorage.setItem("access_token", response.access_token);
         localStorage.setItem("refresh_token", response.refresh_token);
 
-        this.username = response.username;
-        this.tokenType = response.token_type;
-        this.expirationTime = response.expires_in;
+        const parsedJwt = this.parseJwt(response.access_token);
+
+        console.log({parsedJwt});
+
+        this.username = parsedJwt.sub;
+        this.tokenType = response.iss;
+        this.expirationTime = response.exp;
 
         this.loggedIn = true;
       }
+    },
+    parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+
+      return JSON.parse(jsonPayload);
+
     }
   },
   computed: {
@@ -73,7 +89,7 @@ export default {
 }
 
 .admin-info {
-  background-color: lightcoral!important;
+  background-color: lightcoral !important;
 }
 
 .user-info span {

@@ -2,9 +2,10 @@ package com.objectcomputing
 
 import io.micronaut.runtime.event.annotation.EventListener
 import io.micronaut.runtime.server.event.ServerStartupEvent
+import jakarta.inject.Singleton
+
 import static grails.gorm.multitenancy.Tenants.*
 
-import javax.inject.Singleton
 
 @Singleton
 class ProductBootstrap {

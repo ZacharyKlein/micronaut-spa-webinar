@@ -2,8 +2,10 @@ package com.objectcomputing
 
 import grails.gorm.MultiTenant
 import grails.gorm.annotation.Entity
+import io.micronaut.core.annotation.Introspected
 
 @Entity
+@Introspected
 class Product implements MultiTenant<Product> {
 
     Long id
